@@ -18,19 +18,19 @@ describe "CostumeStore" do
 
   it "has a costume inventory" do
     adventure = CostumeStore.create(
-      costume_inventory: 785
+      number_of_costumes: 785
     )
-    expect(CostumeStore.find_by(costume_inventory: 785)).to eq(adventure)
+    expect(CostumeStore.find_by(number_of_costumes: 785)).to eq(adventure)
   end
 
   it "has an employees count" do
     rickys = CostumeStore.create(
       name: "Ricky’s", 
       location: "375 Broadway",
-      costume_inventory: 650,
-      num_of_employees: 17
+      number_of_costumes: 650,
+      number_of_employees: 17
     )
-    expect(CostumeStore.find_by(num_of_employees: 17)).to eq(rickys)
+    expect(CostumeStore.find_by(number_of_employees: 17)).to eq(rickys)
   end
 
   it "knows if it's still in business or permanently closed" do

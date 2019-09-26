@@ -36,10 +36,10 @@ describe "HauntedHouse" do
 
   it "knows if it's family friendly" do
     {"Fright Fest"=>true, "13th Street Manor"=>false}.each do |name, boolean|
-      HauntedHouse.create(name: name, family_friendly: boolean)
+      HauntedHouse.create(name: name, family: boolean)
     end
-    expect(HauntedHouse.find_by(name: "Fright Fest").family_friendly).to eq(true)
-    expect(HauntedHouse.find_by(name: "13th Street Manor").family_friendly).to eq(false)
+    expect(HauntedHouse.find_by(name: "Fright Fest").family).to eq(true)
+    expect(HauntedHouse.find_by(name: "13th Street Manor").family).to eq(false)
   end
 
   it "has an opening date" do
@@ -56,8 +56,8 @@ describe "HauntedHouse" do
 
   it "has a long, long description" do
     description = get_description
-    HauntedHouse.create(name: "13th Floor", description: description)
-    expect(HauntedHouse.find_by(name: "13th Floor").description).to eq(description)
+    HauntedHouse.create(name: "13th Floor", long_description: description)
+    expect(HauntedHouse.find_by(name: "13th Floor").long_description).to eq(description)
   end
 
 end
